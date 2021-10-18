@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+  int r,c,k=0;
+  printf("Enter the rows and columns : ");
+  scanf("%d %d",&r,&c);
+  int arr2[r][c],*arr1;
+  printf("Enter elements ");
+  for(int i=0;i<r;i++)
+  {
+    for(int j=0;j<c;j++)
+    {
+      scanf("%d",&arr2[i][j]);
+    }
+  }
+  printf("2-D Array \n");
+  for(int i=0;i<r;i++)
+  {
+    for(int j=0;j<c;j++)
+    {
+      printf("%d  ",arr2[i][j]);
+    }
+    printf("\n");
+  }
+  arr1=(int *)malloc(r*c*sizeof(int));
+  for(int i=0;i<r;i++)
+  {
+    for(int j=0;j<c;j++)
+    {
+      arr1[i*c+j]=arr2[i][j];
+    }
+  }
+  printf("\nFinal 1D Array using row major order : ");
+  for(int i=0;i<r*c;i++)
+   {
+     printf("%d  ",arr1[i]);
+   }
+}
